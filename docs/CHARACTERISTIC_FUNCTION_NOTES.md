@@ -8,7 +8,7 @@ This document explains **how and why** the Heston characteristic function works 
 The **Black–Scholes model** assumes constant volatility:
 
 $$
-dS_t = \mu S_t\,dt + \sigma S_t\,dW_t
+dS_t = \mu S_t\ dt + \sigma S_t\ dW_t
 $$
 
 **Problem:** Real markets exhibit:
@@ -113,7 +113,7 @@ The **characteristic function** is a mathematical tool that lets us describe the
 Heston (1993) showed that, thanks to the structure of his stochastic volatility model, we can write this function in a very compact way — called **exponential-affine form**:
 
 $$
-\phi(u) = \exp\!\left(C(\tau,u) + D(\tau,u)v_t + i u \ln S_t\right)
+\phi(u) = \exp\left(C(\tau,u) + D(\tau,u)v_t + i u \ln S_t\right)
 $$
 
 Let’s break down what this means:
