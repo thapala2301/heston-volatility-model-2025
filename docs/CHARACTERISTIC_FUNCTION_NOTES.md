@@ -187,65 +187,115 @@ def heston_characteristic_function(u, tau, x, v, kappa, theta, sigma, rho, r):
     log_term = cmath.log((1 - g * exp_dt) / (1 - g))
     C = 1j * u * r * tau + (kappa * theta / sigma**2) * ((b - d) * tau - 2 * log_term)
 
-### 5.2 Critical Validation
+5.2 Critical Validation
 
-At \( u = 0 \):
+At 
+𝑢
+=
+0
+u=0:
 
-$$
-\phi(0) = \mathbb{E}[e^{i \times 0 \times \ln S_T}] = \mathbb{E}[1] = 1.
-$$
+𝜙
+(
+0
+)
+=
+𝐸
+[
+𝑒
+𝑖
+×
+0
+×
+ln
+⁡
+𝑆
+𝑇
+]
+=
+𝐸
+[
+1
+]
+=
+1.
+ϕ(0)=E[e
+i×0×lnS
+T
+	​
 
-✅ **Test numerically** that \( \phi(0) = 1 + 0i \).
+]=E[1]=1.
 
----
+✅ Test numerically that 
+𝜙
+(
+0
+)
+=
+1
++
+0
+𝑖
+ϕ(0)=1+0i.
 
-## 6. THREE CORE ANALOGIES
+6. THREE CORE ANALOGIES
+6.1 MRI Scan — Seeing the Invisible
+Concept	Medical World	Heston World
+Object	Human body	Stock price distribution
+Scan type	MRI under various settings	Characteristic function with different 
+𝑢
+u
+Machine	MRI scanner	Mathematical transform
+Reconstruction	3D image	Option price curve
+Key Insight	MRI reconstructs anatomy from frequency data	Fourier methods reconstruct option prices from 
+𝜙
+(
+𝑢
+)
+ϕ(u)
+6.2 Music Studio — Mixing Frequencies
+Concept	Music Studio	Heston World
+Performance	Live orchestra	Stock price movement
+Instruments	Different sound sources	Risk factors (price, volatility)
+Mixing board	Audio console	
+𝜙
+(
+𝑢
+)
+ϕ(u) formula
+Equalizer	Frequency controls	Choice of 
+𝑢
+u values
+Final track	Mastered mix	Option price surface
+Key Insight	Adjusting frequencies refines a mix	Evaluating 
+𝜙
+(
+𝑢
+)
+ϕ(u) at different 
+𝑢
+u reveals the structure of the probability distribution
+6.3 GPS Navigation — Mapping All Paths
+Concept	GPS Navigation	Heston World
+Map	Road network	Price probability space
+Traffic	Market conditions	Volatility dynamics
+GPS algorithm	Route optimization	Characteristic function computation
+Different routes	Highways vs. local roads	Different possible price paths
+ETA calculation	Travel time	Expected option price
+Key Insight	GPS evaluates all possible routes simultaneously	
+𝜙
+(
+𝑢
+)
+ϕ(u) encodes all possible price paths simultaneously
+7. IMPLEMENTATION ROADMAP
 
-### 6.1 MRI Scan — Seeing the Invisible
+✅ Derive and validate the characteristic function
 
-| **Concept** | **Medical World** | **Heston World** |
-|--------------|------------------|------------------|
-| **Object** | Human body | Stock price distribution |
-| **Scan type** | MRI under various settings | Characteristic function with different \( u \) |
-| **Machine** | MRI scanner | Mathematical transform |
-| **Reconstruction** | 3D image | Option price curve |
-| **Key Insight** | MRI reconstructs anatomy from frequency data | Fourier methods reconstruct option prices from \( \phi(u) \) |
+🔜 Implement option pricing via Fourier inversion (Carr–Madan)
 
----
+📊 Calibrate parameters to market data
 
-### 6.2 Music Studio — Mixing Frequencies
+🧠 Visualize volatility smiles from the Heston surface
 
-| **Concept** | **Music Studio** | **Heston World** |
-|--------------|------------------|------------------|
-| **Performance** | Live orchestra | Stock price movement |
-| **Instruments** | Different sound sources | Risk factors (price, volatility) |
-| **Mixing board** | Audio console | \( \phi(u) \) formula |
-| **Equalizer** | Frequency controls | Choice of \( u \) values |
-| **Final track** | Mastered mix | Option price surface |
-| **Key Insight** | Adjusting frequencies refines a mix | Evaluating \( \phi(u) \) at different \( u \) reveals the structure of the probability distribution |
-
----
-
-### 6.3 GPS Navigation — Mapping All Paths
-
-| **Concept** | **GPS Navigation** | **Heston World** |
-|--------------|------------------|------------------|
-| **Map** | Road network | Price probability space |
-| **Traffic** | Market conditions | Volatility dynamics |
-| **GPS algorithm** | Route optimization | Characteristic function computation |
-| **Different routes** | Highways vs. local roads | Different possible price paths |
-| **ETA calculation** | Travel time | Expected option price |
-| **Key Insight** | GPS evaluates all possible routes simultaneously | \( \phi(u) \) encodes all possible price paths simultaneously |
-
----
-
-## 7. IMPLEMENTATION ROADMAP
-
-1. ✅ **Derive and validate** the characteristic function  
-2. 🔜 **Implement option pricing** via Fourier inversion (Carr–Madan)  
-3. 📊 **Calibrate parameters** to market data  
-4. 🧠 **Visualize volatility smiles** from the Heston surface  
-5. 🚀 **Extend** to correlated assets or rough volatility models
-
-
-    return cmath.exp(C + D * v + 1j * u * x)
+🚀 Extend to correlated assets or rough volatility models
