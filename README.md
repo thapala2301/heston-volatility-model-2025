@@ -21,7 +21,7 @@ This project implements the Heston model, which extends Black-Scholes by modelin
 ### Run the Variance Simulation
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/heston-volatility-model
+git clone https://github.com/thapala2301/heston-volatility-model
 cd heston-volatility-model
 
 # Install dependencies
