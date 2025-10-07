@@ -1,4 +1,5 @@
 # Heston Model Research
+To use for extending detail: https://www.youtube.com/watch?v=PmUIMhMlRkQ
 
 The Heston Model is a stochastic model widely used for pricing options in equity and foreign exchange markets. It extends the logic of the Black–Scholes model by introducing a more realistic treatment of volatility — allowing it to vary randomly over time rather than assuming it remains constant.
 
