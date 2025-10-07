@@ -13,8 +13,8 @@ The Heston Model resolves this by modelling volatility as a stochastic process t
 ## 2. Core Equations
 
 The model assumes two coupled stochastic differential equations (SDEs):
-dSₜ = μSₜdt + √vₜSₜdWₜ¹
-dvₜ = κ(θ - vₜ)dt + σ√vₜdWₜ²
+1) dSₜ = μSₜdt + √vₜSₜdWₜ¹ 
+2) dvₜ = κ(θ - vₜ)dt + σ√vₜdWₜ²
 
 where the two Brownian motions are correlated:
 dWₜ¹dWₜ² = ρdt
