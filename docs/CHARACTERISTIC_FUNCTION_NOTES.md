@@ -58,7 +58,7 @@ Where:
 If $X = 1$ (heads) or $0$ (tails) with probability $0.5$ each:
 
 $$
-\phi(u) = 0.5\,e^{i u} + 0.5\,e^{0} = 0.5(e^{i u} + 1)
+\phi(u) = 0.5e^{i u} + 0.5e^{0} = 0.5(e^{i u} + 1)
 $$
 
 ### 2.3 The Fourier Inversion Magic
